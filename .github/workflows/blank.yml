@@ -9,7 +9,13 @@ jobs:
    steps:
     - name: nick
       run: echo "hello from nick,job1 of workflow1"
-
-
-
-
+    - name: nick2
+      run: echo "hello from nick2"
+    - run: echo "hello from nick3"
+    - name: nick4 for testing multiple lines of code execution 
+      run: l
+       ls -l
+       pwd
+       sudo cat /etc/os-release
+       uname -a
+       echo "nick4 execution done" 
