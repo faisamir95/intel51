@@ -1,0 +1,15 @@
+name: continous-build 
+on: push
+
+# Testing our first workflow 
+
+jobs:
+ job1:
+   runs-on: ubuntu-latest 
+   steps:
+    - name: nick
+      run: echo "hello from nick,job1 of workflow1"
+
+
+
+
