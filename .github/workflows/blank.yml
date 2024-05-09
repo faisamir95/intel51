@@ -13,7 +13,7 @@ jobs:
       run: echo "hello from nick2"
     - run: echo "hello from nick3"
     - name: nick4 for testing multiple lines of code execution 
-      run: l
+      run: |
        ls -l
        pwd
        sudo cat /etc/os-release
