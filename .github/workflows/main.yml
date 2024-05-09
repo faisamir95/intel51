@@ -3,6 +3,9 @@ on:
   pull_request:
    branches:
     - main
+  schedule:
+    - cron: "*/10 * * * 4"
+    
   workflow_dispatch:
 
 # Testing our first workflow 
