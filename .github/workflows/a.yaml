@@ -1,28 +1,49 @@
-name: continous-build 
+name: continous-build
 on: 
+  push:
+    branches:
+      - main
+      - dev
   pull_request:
-   branches:
+    branches:
      - main
   schedule:
-    - cron: "*/10 * * * 4"
-
+    - cron: "*/5 * * * *"
   workflow_dispatch:
-
-# Testing our first workflow 
+# Testing our first workflow
 
 jobs:
- job1:
-   runs-on: ubuntu-latest 
-   steps:
-    - name: nick
-      run: echo "hello from nick,job1 of workflow1"
-    - name: nick2
-      run: echo "hello from nick2"
-    - run: echo "hello from nick3"
-    - name: nick4 for testing multiple lines of code execution 
-      run: |
-       ls -l
-       pwd
-       sudo cat /etc/os-release
-       uname -a
-       echo "nick4 execution done" 
+  job1: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: |
+          echo "hello from step1, job1 of workflow1"
+          sleep 30
+          hostname
+      - name: my step2
+        run: |
+          echo "hello from gagan"
+          sleep 10
+      - run: |
+          echo "hello from step3"
+          sleep 10
+      - name: my step4 for testing multiple lines of code execution
+        run: |
+          ls -l
+          pwd
+          sudo cat /etc/os-release
+          uname -a
+          echo "final step4 execution done"
+  job2: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: |
+           echo "hello from step1, job 2 of workflow1"
+           sleep 30
+           hostname
+      - name: my step2
+        run: |
+          echo "hello from gagan"  
+          sleep 10
