@@ -17,7 +17,6 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     env:
-       environment: dev
        lastname: Amiruddin
     steps:
       - name: step1
@@ -25,7 +24,8 @@ jobs:
           greetings: GoodMorning
           name: Broski
         run: |
-          echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
+          echo "$greetings from $name $lastname, job1 of workflow1 running in environment ${{ vars.enviroment }}"
+          echo "Running on server ${{ vars.servername }}"
           sleep 30
           hostname
       - name: my step2
@@ -45,12 +45,12 @@ jobs:
   test: 
     runs-on: Faisal
     env:
-       environment: staging
        lastname: Amiruddin
     steps:
       - name: step1
         run: |
-           echo "$greetings from $name $lastname, job 2 of running in environment $environment"
+           echo "$greetings from $name $lastname, job 2 of running in environment ${{ vars.enviroment }}"
+           echo "Running on server ${{ vars.servername }}"
            sleep 30
            hostname
       - name: my step2
