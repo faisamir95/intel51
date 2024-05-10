@@ -21,8 +21,11 @@ jobs:
        lastname: Amiruddin
     steps:
       - name: step1
+        env:
+          greetings: GoodMorning
+          name: Broski
         run: |
-          echo "hello from $name $lastname, job1 of workflow1 running in environment $environment"
+          echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
           sleep 30
           hostname
       - name: my step2
@@ -47,7 +50,7 @@ jobs:
     steps:
       - name: step1
         run: |
-           echo "hello from $name $lastname, job 2 of running in environment $environment"
+           echo "$greetings from $name $lastname, job 2 of running in environment $environment"
            sleep 30
            hostname
       - name: my step2
