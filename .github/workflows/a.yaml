@@ -45,5 +45,5 @@ jobs:
            hostname
       - name: my step2
         run: |
-          echo "hello from gagan"  
+          echo "hello from Faisal"  
           sleep 10
