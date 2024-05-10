@@ -14,12 +14,15 @@ on:
 env:
   name: Faisal
 jobs:
-  job1: 
+  build: 
     runs-on: ubuntu-latest
+    env:
+       environment: dev
+       lastname: Amiruddin
     steps:
       - name: step1
         run: |
-          echo "hello from $name, job1 of workflow1"
+          echo "hello from $name $lastname, job1 of workflow1 running in environment $environment"
           sleep 30
           hostname
       - name: my step2
@@ -38,10 +41,13 @@ jobs:
           echo "final step4 execution done"
   test: 
     runs-on: Faisal
+    env:
+       environment: staging
+       lastname: Amiruddin
     steps:
       - name: step1
         run: |
-           echo "hello from $name, job 2 of workflow1"
+           echo "hello from $name $lastname, job 2 of running in environment $environment"
            sleep 30
            hostname
       - name: my step2
