@@ -29,13 +29,6 @@ jobs:
         run: |
           echo "hello from step2"
           sleep 10
-      - run: |
-          echo "hello from step3"
-          sleep 10
-      - name: my step4 for testing multiple lines of code execution
-        run: |
-          echo "hello from step4"
-          sleep 10
           
   test: 
     runs-on: ubuntu-latest
