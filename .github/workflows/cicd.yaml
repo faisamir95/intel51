@@ -61,3 +61,13 @@ jobs:
         run: |
           echo "Job started"
           sleep 10
+
+  notification-failed: 
+    runs-on: ubuntu-latest
+    needs: build-a
+    if: ${{ needs.build.result == 'failure' || failure() }}
+    steps:
+      - name: notify
+        run: |
+          echo "Build A failed"
+          sleep 10
