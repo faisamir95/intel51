@@ -48,7 +48,6 @@ jobs:
       
   notification-start: 
     runs-on: ubuntu-latest
-    needs: test
     steps:
       - name: my step1
         run: |
