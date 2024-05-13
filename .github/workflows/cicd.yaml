@@ -31,15 +31,9 @@ jobs:
            hostname
       - name: my step2
         run: |
-          echo "$greetings from $name"
+          echo "hello from step2"
           sleep 10
-      - run: |
-          echo "hello from step3"
-          sleep 10
-      - name: my step4 for testing multiple lines of code execution
-        run: |
-          echo "hello from step4"
-          sleep 10
+      
   deploy: 
     runs-on: ubuntu-latest
     needs: test
@@ -49,13 +43,14 @@ jobs:
            hostname
       - name: my step2
         run: |
-          echo "$greetings from $name"
+          echo "hello from step2"
           sleep 10
-      - run: |
-          echo "hello from step3"
-          sleep 10
-      - name: my step4 for testing multiple lines of code execution
+      
+  notification-start: 
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: my step1
         run: |
-          echo "hello from step4"
+          echo "Job started"
           sleep 10
-
