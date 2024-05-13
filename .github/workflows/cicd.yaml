@@ -11,18 +11,12 @@ jobs:
       - name: step1
         run: | 
            hostname
+           exit 1
       - name: my step2
         run: |
           echo "$greetings from $name"
           sleep 10
-      - run: |
-          echo "hello from step3"
-          sleep 10
-      - name: my step4 for testing multiple lines of code execution
-        run: |
-          echo "hello from step4"
-          sleep 10
-
+          
   build-b: 
     runs-on: ubuntu-latest
     steps:
