@@ -19,7 +19,7 @@ jobs:
       lastname: Amiruddin
     steps:
       - name: step1
-        if: github.event_name == 'push' 
+        if: runner.os == 'Linux'
         env:
           greetings: GoodMorning
           name: Broski
@@ -29,6 +29,7 @@ jobs:
           sleep 10
           hostname
       - name: my step2
+        if: runner.os == 'Windows'
         run: |
           echo "$greetings from $name"
           sleep 10
@@ -44,7 +45,7 @@ jobs:
           echo "final step4 execution done"
   test: 
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' 
+    if: runner.os == 'Linux'
     environment: test
     steps:
       - name: step1
